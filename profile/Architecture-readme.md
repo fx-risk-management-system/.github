@@ -1,8 +1,4 @@
-You're absolutely right — let’s walk through the **design structure** and explain **each subsystem**, along with **example use cases** to ground the architecture in practical terms.
-
----
-
-## 💡 **Architecture Explanation & Subsystem Use Cases**
+Y## 💡 **Architecture Explanation & Subsystem Use Cases**
 
 This architecture represents a **real-time FX (foreign exchange) risk management system**. It ingests live data, processes it using stream analytics, applies business logic, stores the results, and presents it to users via APIs and dashboards.
 
@@ -131,5 +127,5 @@ Let’s walk through a full use case:
 
 ## 📎 Recommendations
 
-* You can link to this explanation in your main `README.md` as a **detailed architecture breakdown** (`docs/Architecture.md`).
+* You can link to this explanation in your main `README.md` as a **detailed architecture breakdown** [System Architecture](https://github.com/fx-risk-management-system/.github/blob/main/profile/designs/fx-risk-mermaid-architecture.mermaid).
 * Keep diagrams like this in version control alongside code, and regenerate with tools like [Mermaid Live Editor](https://mermaid.live) if needed.

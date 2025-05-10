@@ -28,6 +28,8 @@ Designed to integrate easily with external data sources, the system can ingest d
 
 ## 🏗️ Architecture Layers
 
+* You can check the entire system architecture: **detailed architecture breakdown** [System Architecture](https://github.com/fx-risk-management-system/.github/blob/main/profile/designs/fx-risk-mermaid-architecture.mermaid).
+
 ### 1. **External Data Sources**
 - FX Market Feeds, Core Banking Systems, Client Transactions, Market Analytics
 
@@ -121,6 +123,6 @@ For questions, integration support, or enterprise deployments:
 
 ## 🤝 Contributing
 
-I welcome contributions! Please read the [contributing guidelines](profile/docs/CONTRIBUTING.md) before submitting pull requests or issues.
+I welcome contributions! Please read the [contributing guidelines](docs/CONTRIBUTING.md) before submitting pull requests or issues.
 
 ---
