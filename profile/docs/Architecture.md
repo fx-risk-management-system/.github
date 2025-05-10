@@ -68,22 +68,22 @@ flowchart TD
     fx_market_topic -->|"Stream processing"| fx_rate_processor
     fx_market_topic -->|"Calculate volatility"| volatility_calc
     client_pos_topic -->|"Analyze risk"| position_risk_detector
-    
+
     volatility_calc -->|"Publish metrics"| fx_volatility_topic
     position_risk_detector -->|"Generate alerts"| fx_alerts_topic
-    
+
     %% Flink to Services
     fx_rate_processor -->|"Processed rates"| fx_market_service
     volatility_calc -->|"Volatility metrics"| risk_analytics_service
     position_risk_detector -->|"Risk positions"| position_service
     alert_generator -->|"Risk alerts"| notification_service
-    
+
     %% Service interconnections
     fx_market_service <-->|"Exchange rates"| risk_analytics_service
     position_service -->|"Client positions"| risk_analytics_service
     risk_analytics_service -->|"Risk profiles"| hedging_service
     risk_analytics_service -->|"Risk thresholds"| notification_service
-    
+
     %% Services to Storage
     fx_market_service -->|"Store rates"| timescaledb
     fx_market_service -->|"Cache rates"| redis
@@ -91,18 +91,18 @@ flowchart TD
     position_service -->|"Store positions"| postgres
     notification_service -->|"Store alerts"| elastic
     hedging_service -->|"Store recommendations"| postgres
-    
+
     %% Storage to API/UI
     postgres --> rest_api
     redis --> rest_api
     timescaledb --> rest_api
     elastic --> rest_api
-    
+
     %% API to UI
     rest_api --> client_dashboard
     rest_api --> admin_console
     rest_api --> notification_ui
-    
+
     %% Styling
     classDef external fill:#D4F1F9,stroke:#0078D7,stroke-width:2px
     classDef kafka fill:#E8F6EF,stroke:#1B9C85,stroke-width:2px
@@ -110,13 +110,15 @@ flowchart TD
     classDef spring fill:#E3DFFD,stroke:#7071E8,stroke-width:2px
     classDef storage fill:#FFDBAA,stroke:#FF8551,stroke-width:2px
     classDef api fill:#D2E9E9,stroke:#628E90,stroke-width:2px
-    
+
     class ext_sources external
     class kafka kafka
     class flink flink
     class spring_services spring
     class storage storage
     class api_ui api
+````
 
-📌 For better readability, [click here to view the full zoomable diagram](designs/fx-risk-mermaid-architecture.mermaid).
+</details>
 
+📌 For better readability, [click here to view the full zoomable diagram](https://github.com/fx-risk-management-system/.github/blob/main/profile/designs/fx-risk-mermaid-architecture.mermaid).
